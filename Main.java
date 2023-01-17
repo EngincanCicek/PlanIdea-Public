@@ -23,6 +23,10 @@ public class Main {
 
         // We are starting... First we download/create some plan down there: "schoolPlan".
 
+        /* You can change the main topics and subtopics below as you wish.
+        - Do not forget to give time to the sub-topics in multiples of 15 minutes.
+        - Each main topic should have at least 1 subtopic. */
+
         ArrayList<Subtopic> subtopicsOfMath = new ArrayList<>();
         Subtopic subtopic = new Subtopic("Analytic geometry", "Solve the questions in source X. Watch Y video", 9.5);
         Subtopic subtopic1 = new Subtopic("Negative numbers", "Solve the questions in source A. Watch B video", 7);
@@ -53,15 +57,15 @@ public class Main {
                 " Hundreds or even thousands of hours of plans" +
                 " .", mainSubjectArray);
 
-        // Our plan ready. Next up is the select your work times daily.
+        /* Our plan ready. Next up is the select your work times daily.
+         Choose which day and how many hours you will work.
+         */
         SelectorForStart selector = new SelectorForStart(1.5, 2,
                 1, 0.5, 1, 1.25, 1);
 
-        try {
-            automaticAgendaPreparationAlgorithm(schoolPlan, dayOfWeek, selector);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+
+        automaticAgendaPreparationAlgorithm(schoolPlan, dayOfWeek, selector);
+
 
     }
 
@@ -102,18 +106,20 @@ public class Main {
         }
     }
 
-    public static void automaticAgendaPreparationAlgorithm(Plan selectedPlan, ArrayList<String> daysOfWeek, SelectorForStart selectorForStart) throws InterruptedException {
+    public static void automaticAgendaPreparationAlgorithm(Plan selectedPlan, ArrayList<String> daysOfWeek, SelectorForStart selectorForStart) {
         ArrayList<Double> selectorsArray = selectorForStart.returnWorkTimes();
-        // Example algorithm
+        /* Example algorithm. You can create different agendas by changing
+         the codes below as you wish. The automatic agenda making codes in the app
+          are closed source. */
+
         boolean continueNow = true; // Ending control.
         while (continueNow) {
-            Thread.sleep(200);
             int mainCounter = 0;
 
-            for (int i = 0; i <= 6; i++) {
+            for (int i = 0; i <= 6; i++) { // Agenda details, counting days of week.
                 String presentDayName = daysOfWeek.get(i);
                 double presentDayWorkTime = selectorsArray.get(i);
-                System.out.println("\n"+presentDayName+"'s works: "+presentDayWorkTime+".......");
+                System.out.println("\n" + presentDayName + "'s works: " + presentDayWorkTime + " hour");
 
 
                 double totalWorkTime = 0; // If total time = 0 we must end the algorithm.
@@ -123,81 +129,78 @@ public class Main {
                     }
 
                 }
-                //System.out.println("Total Work time:"+totalWorkTime);
                 if (totalWorkTime <= 0) { // All done!
                     continueNow = false;
                     break;
                 } else {
                     while (presentDayWorkTime > 0) {
-                        if (selectedPlan.mainSubjects.size()>=0 ){
 
-                            if (mainCounter > selectedPlan.mainSubjects.size() - 1) {
-                                mainCounter = 0; // This must be incrase when passed another main subject.
-                            }
+                        if (mainCounter > selectedPlan.mainSubjects.size() - 1) {
+                            mainCounter = 0; // This must be incrase when passed another main subject.
+                        }
 
-                            for (Subtopic subtopic : selectedPlan.mainSubjects.get(mainCounter).subtopics) {
+                        for (Subtopic subtopic : selectedPlan.mainSubjects.get(mainCounter).subtopics) {
 
-                                if (presentDayWorkTime <= 0) {
-                                    break;
-                                }else if (subtopic.time<=0){
-                                    selectedPlan.mainSubjects.get(mainCounter).subtopics.remove(subtopic);
-                                    if (selectedPlan.mainSubjects.get(mainCounter).subtopics.size()<=0){
-                                        selectedPlan.mainSubjects.remove(mainCounter);
-                                    }
-                                    break;
+                            if (presentDayWorkTime <= 0) {
+                                break;
+                            } else if (subtopic.time <= 0) {
+                                selectedPlan.mainSubjects.get(mainCounter).subtopics.remove(subtopic);
+                                if (selectedPlan.mainSubjects.get(mainCounter).subtopics.size() <= 0) {
+                                    selectedPlan.mainSubjects.remove(mainCounter);
                                 }
-                                if (subtopic.time >= 1 && presentDayWorkTime >= 1) {
-                                    System.out.println(subtopic.name + " time= " + 1 );
-                                    subtopic.time -= 1;
-                                    presentDayWorkTime -= 1;
-
-                                    mainCounter++;
-                                    if (mainCounter > selectedPlan.mainSubjects.size() - 1) {
-                                        mainCounter = 0; // This must be incrase when passed another main subject.
-                                    }
-                                    break;
-
-                                } else if (subtopic.time >= 0 && presentDayWorkTime >= 0) {
-                                    double smallone = 0;
-                                    if (subtopic.time <= presentDayWorkTime) {
-                                        smallone = subtopic.time;
-                                    } else {
-                                        smallone = presentDayWorkTime;
-                                    }
-                                    System.out.println(subtopic.name + " time= " + smallone);
-                                    subtopic.time -= smallone;
-                                    presentDayWorkTime -= smallone;
-
-                                    mainCounter++;
-                                    if (mainCounter > selectedPlan.mainSubjects.size() - 1) {
-                                        mainCounter = 0; // This must be incrase when passed another main subject.
-                                    }
-                                    break;
-
-                                }else {
-                                    mainCounter++;
-                                    if (mainCounter > selectedPlan.mainSubjects.size() - 1) {
-                                        mainCounter = 0; // This must be incrase when passed another main subject.
-                                    }
-                                    break;
-                                }
-
-
-
-
-                            }
-
-                            double tt = 0; // If total time = 0 we must end the algorithm.
-                            for (MainSubject mainSubject : selectedPlan.mainSubjects) {
-                                for (Subtopic subtopic : mainSubject.subtopics) {
-                                    tt += subtopic.time;
-                                }
-
-                            }
-                            if (tt == 0) {
-                                presentDayWorkTime=0;
                                 break;
                             }
+                            if (subtopic.time >= 1 && presentDayWorkTime >= 1) {
+                                // todo You can print the content you want here (Like main topic name, sub topic description).
+                                System.out.println(subtopic.name + " time= " + 1 + " hour");
+                                subtopic.time -= 1;
+                                presentDayWorkTime -= 1;
+
+                                mainCounter++;
+                                if (mainCounter > selectedPlan.mainSubjects.size() - 1) {
+                                    mainCounter = 0; // This must be incrase when passed another main subject.
+                                }
+                                break;
+
+                            } else if (subtopic.time >= 0 && presentDayWorkTime >= 0) {
+                                double smallone = 0;
+                                if (subtopic.time <= presentDayWorkTime) {
+                                    smallone = subtopic.time;
+                                } else {
+                                    smallone = presentDayWorkTime;
+                                }
+                                // todo You can print the content you want here (Like main topic name, sub topic description).
+                                System.out.println(subtopic.name + " time= " + smallone + " hour");
+                                subtopic.time -= smallone;
+                                presentDayWorkTime -= smallone;
+
+                                mainCounter++;
+                                if (mainCounter > selectedPlan.mainSubjects.size() - 1) {
+                                    mainCounter = 0; // This must be incrase when passed another main subject.
+                                }
+                                break;
+
+                            } else {
+                                mainCounter++;
+                                if (mainCounter > selectedPlan.mainSubjects.size() - 1) {
+                                    mainCounter = 0; // This must be incrase when passed another main subject.
+                                }
+                                break;
+                            }
+
+
+                        }
+
+                        double tt = 0; // If total time = 0 we must end the algorithm.
+                        for (MainSubject mainSubject : selectedPlan.mainSubjects) {
+                            for (Subtopic subtopic : mainSubject.subtopics) {
+                                tt += subtopic.time;
+                            }
+
+                        }
+                        if (tt == 0) {
+                            presentDayWorkTime = 0;
+                            break;
                         }
 
 
