@@ -16,7 +16,11 @@ Since it is a closed source application, this repository is only for public part
 - Optional motivation notifications when task is completed
 - Plan; create, edit, share and download
 
-  
+## Links
+- [Website](https://planiofficial.com/)
+- [LinkedIn](https://www.linkedin.com/company/plan-idea/?viewAsMember=true)
+- [Google Play Store](https://play.google.com/store/apps/details?id=com.deneme.planifragmentson)
+
 
 
 
