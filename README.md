@@ -22,14 +22,24 @@ Since it is a closed source application, this repository is only for public part
 
 
 
-![Logo](https://github.com/EngincanCicek/PlanIdea-Public/blob/main/LOGO.png)
 
     
 ## Screenshots
 
-![Uygulama Ekran Görüntüsü](https://github.com/EngincanCicek/PlanIdea-Public/blob/main/4googleplaystore.jpg=800X400)
-![Uygulama Ekran Görüntüsü](https://github.com/EngincanCicek/PlanIdea-Public/blob/main/4googleplaystore2.jpg)
-![Uygulama Ekran Görüntüsü](https://github.com/EngincanCicek/PlanIdea-Public/blob/main/4googleplaystore1.jpg)
+<p float="left">
+<img src="https://github.com/EngincanCicek/PlanIdea-Public/blob/main/4googleplaystore.jpg" width="310.5" height="672">
+<img src="https://github.com/EngincanCicek/PlanIdea-Public/blob/main/4googleplaystore2.jpg" width="310.5" height="672">
+<img src="https://github.com/EngincanCicek/PlanIdea-Public/blob/main/4googleplaystore1.jpg" width="310.5" height="672">
+</p>
+
+![Logo](https://github.com/EngincanCicek/PlanIdea-Public/blob/main/SocialMediaBackground.png)
+
+
+<p float="left">
+<img src="https://github.com/EngincanCicek/PlanIdea-Public/blob/main/4googleplaystore5.jpg" width="310.5" height="672">
+<img src="https://github.com/EngincanCicek/PlanIdea-Public/blob/main/4googleplaystore3.jpg" width="310.5" height="672">
+<img src="https://github.com/EngincanCicek/PlanIdea-Public/blob/main/4googleplaystore4.jpg" width="310.5" height="672">
+</p>
 
 
   
