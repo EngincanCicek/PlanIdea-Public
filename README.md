@@ -56,5 +56,5 @@ Since it is a closed source application, this repository is only for public part
 - SQLite, Firebase
 
 ## Privacy Policy and User Agreement Links
-- https://sites.google.com/view/planidea/privacy-policy
-- https://sites.google.com/view/planideatr/gizlilik-s%C3%B6zle%C5%9Fmesi
+- [Privacy Policy](https://sites.google.com/view/planidea/privacy-policy)
+- [Privacy Policy Turkish](https://sites.google.com/view/planideatr/gizlilik-s%C3%B6zle%C5%9Fmesi)
