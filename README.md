@@ -20,6 +20,7 @@ Since it is a closed source application, this repository is only for public part
 - [Website](https://planiofficial.com/)
 - [LinkedIn](https://www.linkedin.com/company/plan-idea/?viewAsMember=true)
 - [Google Play Store](https://play.google.com/store/apps/details?id=com.deneme.planifragmentson)
+- [Here is PlanIdea's story medium.com](https://medium.com/@engincancicek/planidea-transforming-productivity-into-a-game-2a34809efa3d)
 
 
 
