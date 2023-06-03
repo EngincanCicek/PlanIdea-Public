@@ -59,3 +59,20 @@ Since it is a closed source application, this repository is only for public part
 ## Privacy Policy and User Agreement Links
 - [Privacy Policy](https://sites.google.com/view/planidea/privacy-policy)
 - [Privacy Policy Turkish](https://sites.google.com/view/planideatr/gizlilik-s%C3%B6zle%C5%9Fmesi)
+
+## Used Libraries
+- Firebase Database (com.google.firebase:firebase-database)
+- Firebase Remote Config (com.google.firebase:firebase-config)
+- Firebase Crashlytics (com.google.firebase:firebase-crashlytics)
+- Lottie (com.airbnb.android:lottie)
+- Google Play Services Ads (com.google.android.gms:play-services-ads)
+- Firebase BOM (com.google.firebase:firebase-bom)
+- Firebase Analytics (com.google.firebase:firebase-analytics)
+- Navigation (androidx.navigation:navigation-fragment, androidx.navigation:navigation-ui)-
+- Firebase Firestore (com.google.firebase:firebase-firestore)
+- WorkManager (androidx.work:work-runtime)
+- LiveData (androidx.lifecycle:lifecycle-livedata)
+- ViewModel (androidx.lifecycle:lifecycle-viewmodel)
+- Firebase Authentication (com.google.firebase:firebase-auth)
+- Google Play Services Auth (com.google.android.gms:play-services-auth)
+- Ucdemir-Inn_App_Purchase_v2 (com.github.Ucdemir:Ucdemir-Inn_App_Purchase_v2)
